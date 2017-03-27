@@ -30,21 +30,13 @@ ALCARECOTkAlMuonIsolatedRelCombIsoMuons = Alignment.CommonAlignmentProducer.TkAl
 import Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi
 ALCARECOTkAlMuonIsolated = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi.AlignmentTrackSelector.clone(
     filter = True, ##do not store empty events
-    applyBasicCuts = True,
     ptMin = 2.0, ##GeV 
     etaMin = -3.5,
     etaMax = 3.5,
-    nHitMin = 0
 )
 
 ALCARECOTkAlMuonIsolated.GlobalSelector.muonSource = 'ALCARECOTkAlMuonIsolatedRelCombIsoMuons'
 # Isolation is shifted to the muon preselection, and then applied intrinsically if applyGlobalMuonFilter = True
-ALCARECOTkAlMuonIsolated.GlobalSelector.applyIsolationtest = False
-ALCARECOTkAlMuonIsolated.GlobalSelector.minJetDeltaR = 0.1
 ALCARECOTkAlMuonIsolated.GlobalSelector.applyGlobalMuonFilter = True
-
-ALCARECOTkAlMuonIsolated.TwoBodyDecaySelector.applyMassrangeFilter = False
-ALCARECOTkAlMuonIsolated.TwoBodyDecaySelector.applyChargeFilter = False
-ALCARECOTkAlMuonIsolated.TwoBodyDecaySelector.applyAcoplanarityFilter = False
 
 seqALCARECOTkAlMuonIsolated = cms.Sequence(ALCARECOTkAlMuonIsolatedHLT+ALCARECOTkAlMuonIsolatedDCSFilter+ALCARECOTkAlMuonIsolatedGoodMuons+ALCARECOTkAlMuonIsolatedRelCombIsoMuons+ALCARECOTkAlMuonIsolated)

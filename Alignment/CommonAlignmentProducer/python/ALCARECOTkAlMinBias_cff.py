@@ -30,18 +30,11 @@ import Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi
 ALCARECOTkAlMinBias = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi.AlignmentTrackSelector.clone()
 ALCARECOTkAlMinBias.filter = True ##do not store empty events	
 
-ALCARECOTkAlMinBias.applyBasicCuts = True
 ALCARECOTkAlMinBias.ptMin = 0.65 ##GeV
 ALCARECOTkAlMinBias.pMin = 1.5 ##GeV
-
 
 ALCARECOTkAlMinBias.etaMin = -3.5
 ALCARECOTkAlMinBias.etaMax = 3.5
 ALCARECOTkAlMinBias.nHitMin = 7 ## at least 7 hits required
-ALCARECOTkAlMinBias.GlobalSelector.applyIsolationtest = False
-ALCARECOTkAlMinBias.GlobalSelector.applyGlobalMuonFilter = False
-ALCARECOTkAlMinBias.TwoBodyDecaySelector.applyMassrangeFilter = False
-ALCARECOTkAlMinBias.TwoBodyDecaySelector.applyChargeFilter = False
-ALCARECOTkAlMinBias.TwoBodyDecaySelector.applyAcoplanarityFilter = False
 
 seqALCARECOTkAlMinBias = cms.Sequence(ALCARECOTkAlMinBiasHLT*~ALCARECOTkAlMinBiasNOTHLT+ALCARECOTkAlMinBiasDCSFilter+ALCARECOTkAlMinBias)

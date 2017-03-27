@@ -31,24 +31,17 @@ import Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi
 ALCARECOTkAlZMuMu = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi.AlignmentTrackSelector.clone()
 ALCARECOTkAlZMuMu.filter = True ##do not store empty events
 
-ALCARECOTkAlZMuMu.applyBasicCuts = True
 ALCARECOTkAlZMuMu.ptMin = 15.0 ##GeV
 ALCARECOTkAlZMuMu.etaMin = -3.5
 ALCARECOTkAlZMuMu.etaMax = 3.5
-ALCARECOTkAlZMuMu.nHitMin = 0
 
 ALCARECOTkAlZMuMu.GlobalSelector.muonSource = 'ALCARECOTkAlZMuMuRelCombIsoMuons'
 # Isolation is shifted to the muon preselection, and then applied intrinsically if applyGlobalMuonFilter = True
-ALCARECOTkAlZMuMu.GlobalSelector.applyIsolationtest = False
 ALCARECOTkAlZMuMu.GlobalSelector.applyGlobalMuonFilter = True
 
 ALCARECOTkAlZMuMu.TwoBodyDecaySelector.applyMassrangeFilter = True
 ALCARECOTkAlZMuMu.TwoBodyDecaySelector.minXMass = 65.0 ##GeV
 ALCARECOTkAlZMuMu.TwoBodyDecaySelector.maxXMass = 115.0 ##GeV
-ALCARECOTkAlZMuMu.TwoBodyDecaySelector.daughterMass = 0.105 ##GeV (Muons)
 ALCARECOTkAlZMuMu.TwoBodyDecaySelector.applyChargeFilter = True
-ALCARECOTkAlZMuMu.TwoBodyDecaySelector.charge = 0
-ALCARECOTkAlZMuMu.TwoBodyDecaySelector.applyAcoplanarityFilter = False
-ALCARECOTkAlZMuMu.TwoBodyDecaySelector.numberOfCandidates = 1
 
 seqALCARECOTkAlZMuMu = cms.Sequence(ALCARECOTkAlZMuMuHLT+ALCARECOTkAlZMuMuDCSFilter+ALCARECOTkAlZMuMuGoodMuons+ALCARECOTkAlZMuMuRelCombIsoMuons+ALCARECOTkAlZMuMu)

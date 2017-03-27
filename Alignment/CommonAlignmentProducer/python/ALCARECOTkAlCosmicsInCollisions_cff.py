@@ -30,9 +30,7 @@ import Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi
 ALCARECOTkAlCosmicsInCollisions = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi.AlignmentTrackSelector.clone(
     src = 'cosmicDCTracks',
     filter = True,
-    applyBasicCuts = True,
 
-    ptMin = 0., ##10
     ptMax = 99999.,
     pMin = 4., ##10
     pMax = 99999.,
@@ -41,9 +39,7 @@ ALCARECOTkAlCosmicsInCollisions = Alignment.CommonAlignmentProducer.AlignmentTra
 
     nHitMin = 7,
     nHitMin2D = 2,
-    chi2nMax = 999999.,
     
-    applyMultiplicityFilter = False,
     applyNHighestPt = True, ## select only highest pT track
     nHighestPt = 1
     )

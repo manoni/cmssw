@@ -28,25 +28,16 @@ import Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi
 ALCARECOTkAlJpsiMuMu = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi.AlignmentTrackSelector.clone()
 ALCARECOTkAlJpsiMuMu.filter = True ##do not store empty events
 
-ALCARECOTkAlJpsiMuMu.applyBasicCuts = True
 ALCARECOTkAlJpsiMuMu.ptMin = 0.8 ##GeV
 ALCARECOTkAlJpsiMuMu.etaMin = -3.5
 ALCARECOTkAlJpsiMuMu.etaMax = 3.5
-ALCARECOTkAlJpsiMuMu.nHitMin = 0
 
 ALCARECOTkAlJpsiMuMu.GlobalSelector.muonSource = 'ALCARECOTkAlJpsiMuMuGoodMuons'
 # To not loose non-prompt J/Psi, do not apply any isolation
-ALCARECOTkAlJpsiMuMu.GlobalSelector.applyIsolationtest = False
 ALCARECOTkAlJpsiMuMu.GlobalSelector.applyGlobalMuonFilter = True
 
 ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.applyMassrangeFilter = True
 ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.minXMass = 2.7 ##GeV
 ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.maxXMass = 3.4 ##GeV
-ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.daughterMass = 0.105 ##GeV (Muons)
-ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.applyChargeFilter = False
-ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.charge = 0
-ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.applyAcoplanarityFilter = False
-ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.acoplanarDistance = 1 ##radian
-ALCARECOTkAlJpsiMuMu.TwoBodyDecaySelector.numberOfCandidates = 1 	 
 
 seqALCARECOTkAlJpsiMuMu = cms.Sequence(ALCARECOTkAlJpsiMuMuHLT+ALCARECOTkAlJpsiMuMuDCSFilter+ALCARECOTkAlJpsiMuMuGoodMuons+ALCARECOTkAlJpsiMuMu)

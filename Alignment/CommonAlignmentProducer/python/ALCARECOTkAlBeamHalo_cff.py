@@ -25,16 +25,8 @@ ALCARECOTkAlBeamHalo = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_
 ALCARECOTkAlBeamHalo.src = 'beamhaloTracks'
 ALCARECOTkAlBeamHalo.filter = True ##do not store empty events
 
-ALCARECOTkAlBeamHalo.applyBasicCuts = True
-ALCARECOTkAlBeamHalo.ptMin = 0.0 ##GeV
-
 ALCARECOTkAlBeamHalo.etaMin = -9999
 ALCARECOTkAlBeamHalo.etaMax = 9999
 ALCARECOTkAlBeamHalo.nHitMin = 3
-ALCARECOTkAlBeamHalo.GlobalSelector.applyIsolationtest = False
-ALCARECOTkAlBeamHalo.GlobalSelector.applyGlobalMuonFilter = False
-ALCARECOTkAlBeamHalo.TwoBodyDecaySelector.applyMassrangeFilter = False
-ALCARECOTkAlBeamHalo.TwoBodyDecaySelector.applyChargeFilter = False
-ALCARECOTkAlBeamHalo.TwoBodyDecaySelector.applyAcoplanarityFilter = False
 
 seqALCARECOTkAlBeamHalo = cms.Sequence(ALCARECOTkAlBeamHaloDCSFilter+ALCARECOTkAlBeamHalo)

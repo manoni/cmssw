@@ -21,17 +21,11 @@ import Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi
 ALCARECOTkAlCosmicsCTF0T = Alignment.CommonAlignmentProducer.AlignmentTrackSelector_cfi.AlignmentTrackSelector.clone(
     src = 'ctfWithMaterialTracksP5',
     filter = True,
-    applyBasicCuts = True,
-    ptMin = 0., ##10
     ptMax = 99999.,
     etaMin = -99., ##-2.4 keep also what is going through...
     etaMax = 99., ## 2.4 ...both TEC with flat slope
     nHitMin = 7,
     nHitMin2D = 2,
-    chi2nMax = 999999.,
-    applyNHighestPt = False, ## no pT measurement -> sort meaningless
-    nHighestPt = 1,
-    applyMultiplicityFilter = False
     )
 
 # AlCaReco for track based alignment using Cosmic muons reconstructed by Cosmic Track Finder
