@@ -39,6 +39,7 @@ ALCARECOTkAlUpsilonMuMu.etaMax = 3.5
 
 ALCARECOTkAlUpsilonMuMu.GlobalSelector.muonSource = 'ALCARECOTkAlUpsilonMuMuRelCombIsoMuons'
 # Isolation is shifted to the muon preselection, and then applied intrinsically if applyGlobalMuonFilter = True
+ALCARECOTkAlUpsilonMuMu.GlobalSelector.applyGlobalMuonFilter = True
 
 ALCARECOTkAlUpsilonMuMu.TwoBodyDecaySelector.applyMassrangeFilter = True
 ALCARECOTkAlUpsilonMuMu.TwoBodyDecaySelector.minXMass = 8.9 ##GeV
